@@ -146,12 +146,14 @@ nav a:focus {
   margin-bottom: 6px;
 }
 
-.hero-music audio {
+.hero-audio {
+  display: block;
+  margin-top: 20px;
   width: 100%;
-  max-width: 320px; /* never wider than the hero text */
+  max-width: 320px; 
+
 }
 
-/* dark layer over the photo so white text stays readable */
 .hero::after {
   content: "";
   position: absolute;
