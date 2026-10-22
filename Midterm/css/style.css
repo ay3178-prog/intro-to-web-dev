@@ -1,0 +1,406 @@
+/* =========================================================
+   Lost in Translation: midterm stylesheet
+   Layout first, decoration later.
+   ========================================================= */
+
+/* ---------- 1. Colors + fonts as variables (from my Pinterest board) ---------- */
+:root {
+  --paper: #f3ebdd;   /* page background (old dictionary pages) */
+  --sand: #e4d3b8;    /* soft blocks, footer */
+  --ink: #3a2a1f;     /* main text */
+  --navy: #1f3645;    /* subheadings (music poster) */
+  --muted: #6b5a4c;   /* secondary text */
+  --rust: #a8432a;    /* buttons + links */
+  --mustard: #e3a73e; /* small accents */
+
+  --heading-font: "Courier Prime", "Courier New", monospace;
+  --body-font: "DM Sans", Arial, sans-serif;
+}
+
+/* ---------- 2. Basic reset ---------- */
+* {
+  box-sizing: border-box; /* padding + border stay inside the width (box model) */
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body-font);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--rust);
+}
+
+/* ---------- 3. Header + nav (flexbox) ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* logo left, nav right */
+  align-items: center;
+  padding: 16px 40px;
+}
+
+.logo {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--navy);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+}
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 8px 4px;
+  transition: color 0.2s;
+}
+
+/* Hover effect: menu links change color */
+nav a:hover,
+nav a:focus {
+  color: var(--rust);
+}
+
+/* ---------- 4. Dropdown (positioning) ---------- */
+.has-dropdown {
+  position: relative; /* the submenu is positioned against this item */
+}
+
+.has-dropdown ul {
+  display: none; /* hidden until hover */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  gap: 0;
+  background: var(--paper);
+  border: 1px solid var(--sand);
+  min-width: 140px;
+  z-index: 10;
+}
+
+.has-dropdown ul a {
+  display: block;
+  padding: 8px 12px;
+}
+
+.has-dropdown ul a:hover {
+  background: var(--sand);
+}
+
+/* show the submenu on hover, and when tabbing with a keyboard */
+.has-dropdown:hover ul,
+.has-dropdown:focus-within ul {
+  display: flex;
+}
+
+/* ---------- 5. Hero: text on top of the image (positioning) ---------- */
+.hero {
+  position: relative; /* hero-text is placed inside this box */
+  padding: 0; /* the photo goes edge to edge */
+  height: 70vh;
+  background: var(--navy); /* shows if the image is missing */
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* crop the photo to fill the box without stretching */
+}
+
+/* ----- Music player inside the hero ----- */
+.hero-music {
+  margin: 20px 0 0;
+}
+
+.hero-music figcaption {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.hero-music audio {
+  width: 100%;
+  max-width: 320px; /* never wider than the hero text */
+}
+
+/* dark layer over the photo so white text stays readable */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(31, 54, 69, 0.55);
+}
+
+.hero-text {
+  position: absolute;
+  left: 40px;
+  bottom: 60px;
+  z-index: 1; /* sit above the dark layer */
+  color: #fff;
+  max-width: 560px;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin: 0 0 12px;
+}
+
+/* ---------- 6. Buttons ---------- */
+.button {
+  display: inline-block;
+  background: var(--rust);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  transition: transform 0.2s;
+}
+
+/* Hover effect: the button grows a little */
+.button:hover,
+.button:focus {
+  transform: scale(1.05);
+}
+
+/* ---------- 7. Sections ---------- */
+section {
+  padding: 48px 40px;
+}
+
+.intro {
+  max-width: 700px;
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  display: flex; /* three columns side by side */
+  gap: 32px;
+}
+
+.why-list li {
+  flex: 1; /* each column takes an equal share */
+}
+
+.why-list h3 {
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.why-list p {
+  color: var(--muted);
+  margin-top: 0;
+}
+
+/* ---------- 8. Explore gallery with hover mask ---------- */
+.container {
+  display: flex;
+  gap: 16px;
+}
+
+.thumb {
+  position: relative; /* the mask covers this box */
+  flex: 1;
+  aspect-ratio: 1 / 1; /* square tiles */
+  background: var(--sand); /* shows if the image is missing */
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mask {
+  position: absolute;
+  inset: 0; /* top, right, bottom, left all 0 = cover the whole tile */
+  background: rgba(58, 42, 31, 0.85);
+  color: var(--paper);
+  padding: 20px;
+  opacity: 0; /* invisible until hover */
+  transition: opacity 0.3s;
+}
+
+.mask a {
+  color: var(--mustard);
+}
+
+/* show the story preview on hover, or when tabbing to the link */
+.thumb:hover .mask,
+.thumb:focus-within .mask {
+  opacity: 1;
+}
+
+/* ---------- 9. Footer ---------- */
+.site-footer {
+  background: var(--sand);
+  padding: 24px 40px;
+  text-align: center;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.site-footer a {
+  color: var(--ink);
+}
+
+.credit {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------- 10. Phones (media query) ---------- */
+@media (max-width: 768px) {
+  /* stack the logo above the nav */
+  .site-header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* no hover on phones: tapping Languages just opens the Blog page */
+  .has-dropdown ul,
+  .has-dropdown:hover ul,
+  .has-dropdown:focus-within ul {
+    display: none;
+  }
+
+  section {
+    padding: 32px 20px;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .hero-text {
+    left: 20px;
+    right: 20px;
+    bottom: 32px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.25rem;
+  }
+
+  /* three columns become one */
+  .why-list,
+  .container {
+    flex-direction: column;
+  }
+
+  /* on phones, show the story preview at the bottom of each photo */
+  .mask {
+    opacity: 1;
+    top: auto;
+  }
+}
+
+/* ---------- 11. Blog page ---------- */
+.page-intro {
+  padding-bottom: 16px;
+}
+
+.jump-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.jump-links a {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1px solid var(--rust);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.jump-links a:hover,
+.jump-links a:focus {
+  background: var(--rust);
+  color: #fff;
+}
+
+.language h2 {
+  border-bottom: 2px solid var(--sand);
+  padding-bottom: 8px;
+}
+
+/* one blog post: photo on the left, text on the right */
+.post {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.post img {
+  width: 280px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--sand);
+}
+
+.post-text h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+.post-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  /* photo goes on top of the text on phones */
+  .post {
+    flex-direction: column;
+  }
+
+  .post img {
+    width: 100%;
+  }
+}

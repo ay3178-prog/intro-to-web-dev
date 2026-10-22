@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost in Translation | About</title>
+    <!-- Fonts from Google Fonts: Courier Prime for headings, DM Sans for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ===== HEADER: logo on the left, nav on the right (flexbox) ===== -->
+    <header class="site-header">
+      <!-- Clicking the logo always brings you back home -->
+      <a class="logo" href="index.html">LT</a>
+
+      <nav>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <!-- Dropdown: same pattern as Week 05 (a list inside a list) -->
+          <li class="has-dropdown">
+            <a href="blog.html">Languages</a>
+            <ul>
+              <li><a href="blog.html#hindi">Hindi</a></li>
+              <li><a href="blog.html#spanish">Spanish</a></li>
+              <li><a href="blog.html#turkish">Turkish</a></li>
+              <li><a href="blog.html#italian">Italian</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>About me</h1>
+        <p>[A short paragraph about you and the languages you speak.]</p>
+      </section>
+
+      <section id="contact">
+        <h2>Say hi</h2>
+        <!-- TODO: paste the contact form from Thursday's lesson here -->
+        <p><a href="mailto:your-email@nyu.edu">Email me</a></p>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="mailto:your-email@nyu.edu">Email me</a></li>
+      </ul>
+      <p>&copy; 2026 Aparna &middot; Lost in Translation</p>
+    </footer>
+  </body>
+</html>

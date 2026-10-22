@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost in Translation | Home</title>
+    <!-- Fonts from Google Fonts: Courier Prime for headings, DM Sans for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ===== HEADER: logo on the left, nav on the right (flexbox) ===== -->
+    <header class="site-header">
+      <!-- Clicking the logo always brings you back home -->
+      <a class="logo" href="index.html">LT</a>
+
+      <nav>
+        <ul>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <!-- Dropdown: same pattern as Week 05 (a list inside a list) -->
+          <li class="has-dropdown">
+            <a href="blog.html">Languages</a>
+            <ul>
+              <li><a href="blog.html#hindi">Hindi</a></li>
+              <li><a href="blog.html#spanish">Spanish</a></li>
+              <li><a href="blog.html#turkish">Turkish</a></li>
+              <li><a href="blog.html#italian">Italian</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ===== HERO: image with text positioned on top of it ===== -->
+      <section class="hero">
+        <img src="img/hero.jpg" alt="Wall of travel photos and postcards around the word Travel" />
+        <div class="hero-text">
+          <h1>Lost in Translation</h1>
+          <p>A way to stay connected with the cultures and people you care about.</p>
+          <a class="button" href="blog.html">Read the blog</a>
+
+          <!-- Music player, adapted from the W3Schools "HTML Audio" page.
+               controls: shows the play button, so the visitor chooses to start it
+               (browsers block music that starts by itself)
+               loop: starts the song over when it ends
+               preload="none": does not download the song until someone presses play -->
+          <figure class="hero-music">
+            <figcaption>Press play: "Foreign" by Moavii</figcaption>
+            <audio controls loop preload="none">
+              <source src="audio/foreign.mp3" type="audio/mpeg" />
+              Your browser does not support the audio player.
+            </audio>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== INTRO ===== -->
+      <section class="intro">
+        <h2>Hi, I'm Aparna.</h2>
+        <p>
+          I speak English, Hindi, Spanish and Turkish, and I'm learning Italian right now.
+          This blog is about what it actually feels like to speak a new language:
+          the nerves, the mistakes, and the moments it finally clicks.
+        </p>
+      </section>
+
+      <!-- ===== WHY LANGUAGES: three columns (flexbox) ===== -->
+      <section class="why">
+        <h2>Why learn a language?</h2>
+        <ul class="why-list">
+          <li>
+            <h3>Respect</h3>
+            <p>Speaking someone's language shows you care where they come from.</p>
+          </li>
+          <li>
+            <h3>Connection</h3>
+            <p>Nothing gets lost in translation when you talk in their mother tongue.</p>
+          </li>
+          <li>
+            <h3>Confidence</h3>
+            <p>Every awkward first conversation makes the next one easier.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== EXPLORE: gallery with a hover mask (Week 05 pattern) ===== -->
+      <section class="explore">
+        <h2>Explore</h2>
+        <div class="container">
+          <article class="thumb">
+            <img src="img/story-1.jpg" alt="Airplane wing over the clouds at sunset" />
+            <div class="mask">
+              <h3>My first real conversation in Spanish</h3>
+              <p>[One-line preview of this story.]</p>
+              <a class="info" href="blog.html#spanish">Read the story</a>
+            </div>
+          </article>
+
+          <article class="thumb">
+            <img src="img/story-2.jpg" alt="Notre-Dame cathedral in Paris on a sunny day" />
+            <div class="mask">
+              <h3>How I learned Turkish</h3>
+              <p>[One-line preview of this story.]</p>
+              <a class="info" href="blog.html#turkish">Read the story</a>
+            </div>
+          </article>
+
+          <article class="thumb">
+            <img src="img/story-3.jpg" alt="Painted street of old houses under a blue sky" />
+            <div class="mask">
+              <h3>Starting Italian</h3>
+              <p>[One-line preview of this story.]</p>
+              <a class="info" href="blog.html#italian">Read the story</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="site-footer">
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="mailto:your-email@nyu.edu">Email me</a></li>
+      </ul>
+      <p>&copy; 2026 Aparna &middot; Lost in Translation</p>
+      <p class="credit">Music: "Foreign" by Moavii, from freetouse.com</p>
+    </footer>
+  </body>
+</html>
