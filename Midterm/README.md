@@ -16,7 +16,7 @@ Home
 Every page: logo (links home), nav, footer with socials and email.
 
 ## Wireframe
-![Home page wireframe](img/wireframe.png)
+The home page wireframe is in my presentation slides.
 
 ## Skills used
 - Box model, flexbox and positioning (header, hero, three-column section, explore cards)
@@ -52,7 +52,7 @@ Midterm/
 ├── css/
 │   ├── var.css     my colors + fonts (variables)
 │   └── xstyle.css  all the styling
-├── img/            photos
+├── img/            map-hero, plane, louvre, harbor, desert, aparna (.jpg)
 ├── audio/
 │   └── foreign.mp3 song for the music player on the home page
 └── README.md
@@ -63,11 +63,11 @@ Midterm/
 - Music: "Foreign" by Moavii, from freetouse.com
 - Class exercises: Week 04 flexbox, Week 05 dropdown nav and portfolio page, Week 06 media queries
 - Fonts: Google Fonts (Courier Prime, DM Sans)
-- Photos: [list where each photo came from]
+- Photos: GOOGLE
 
 ## Next steps
 - Write a real story for each language
 - Connect the contact form
 
 ## Credits
-Photos: [list where each photo came from]
+Photos: GOOGLE
