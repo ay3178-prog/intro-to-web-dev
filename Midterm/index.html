@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost in Translation | Home</title>
+    <!-- Google Fonts: Courier Prime & DM Sans for everything else -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/var.css" />
+    <link rel="stylesheet" href="css/xstyle.css" />
+  </head>
+
+  <body>
+    <!-- HEADER: logo on the left, nav on the right, it sticks to the top when you scroll -->
+    <header class="site-header">
+      <!-- logo goes back to the home page -->
+      <a class="logo" href="index.html">LT</a>
+
+      <nav>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <!-- dropdown: i made a list inside a list -->
+          <li class="has-dropdown">
+            <a href="blog.html">Languages</a>
+            <ul>
+              <li><a href="blog.html#hindi">Hindi</a></li>
+              <li><a href="blog.html#spanish">Spanish</a></li>
+              <li><a href="blog.html#turkish">Turkish</a></li>
+              <li><a href="blog.html#italian">Italian</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO: photo with the text sitting on top of it  -->
+      <section class="hero">
+        <img src="img/hero-beach.jpg" alt="Person walking on a beach in front of a tall green cliff and turquoise waves" />
+        <!-- the text slides up and fades in when the page loads ( the keyframes in the CSS) -->
+        <div class="hero-text">
+          <p class="eyebrow">a language blog</p>
+          <h1>Lost in Translation</h1>
+          <p>A way to stay connected with the cultures and people you care about.</p>
+          <a class="button" href="blog.html">Read the blog</a>
+
+          <!-- music player used from the W3Schools HTML Audio + loop pages -->
+          <audio class="hero-audio" controls loop>
+            <source src="audio/foreign.mp3" type="audio/mpeg" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </section>
+
+      <!-- INTRO: my photo in an arch on the left, a hello on the right (like the blog posts) -->
+      <section class="intro-split">
+        <img class="intro-photo" src="img/aparna.jpg" alt="Photo of Aparna" />
+        <div>
+          <p class="post-label">hello &middot; namaste &middot; hola &middot; merhaba &middot; ciao</p>
+          <h2>Hi, I'm Aparna.</h2>
+          <p>
+            I speak English, Hindi, Spanish and Turkish, and I'm learning Italian right now.
+            This blog is about what it actually feels like to speak a new language:
+            the anxiety, the mistakes, and the moments that make the experiences and learning feel worth it!
+          </p>
+          <a class="button" href="about.html">More about me</a>
+        </div>
+      </section>
+
+      <!-- CAROUSEL: the blog photos slide sideways, click one to jump to that story.
+           the cards are written 4 times so the loop never shows a gap -->
+      <section class="carousel">
+        <p class="eyebrow">the stories</p>
+        <h2>Where my languages live</h2>
+        <div class="carousel-window">
+          <div class="carousel-track">
+          <a class="slide" href="blog.html#hindi">
+            <img src="img/india.jpg" alt="Hawa Mahal, the pink palace in Jaipur, India" />
+            <span class="slide-label">01 &middot; Hindi</span>
+          </a>
+          <a class="slide" href="blog.html#spanish">
+            <img src="img/spain.jpg" alt="Sagrada Familia in Barcelona, Spain" />
+            <span class="slide-label">02 &middot; Spanish</span>
+          </a>
+          <a class="slide" href="blog.html#turkish">
+            <img src="img/harbor.jpg" alt="Boats on bright blue water in front of a seaside town" />
+            <span class="slide-label">03 &middot; Turkish</span>
+          </a>
+          <a class="slide" href="blog.html#italian">
+            <img src="img/italy.jpg" alt="Lake Como in Italy with villas and mountains" />
+            <span class="slide-label">04 &middot; Italian</span>
+          </a>
+          <!-- copies for the loop (hidden from screen readers) -->
+          <a class="slide" href="blog.html#hindi" aria-hidden="true" tabindex="-1">
+            <img src="img/india.jpg" alt="" />
+            <span class="slide-label">01 &middot; Hindi</span>
+          </a>
+          <a class="slide" href="blog.html#spanish" aria-hidden="true" tabindex="-1">
+            <img src="img/spain.jpg" alt="" />
+            <span class="slide-label">02 &middot; Spanish</span>
+          </a>
+          <a class="slide" href="blog.html#turkish" aria-hidden="true" tabindex="-1">
+            <img src="img/harbor.jpg" alt="" />
+            <span class="slide-label">03 &middot; Turkish</span>
+          </a>
+          <a class="slide" href="blog.html#italian" aria-hidden="true" tabindex="-1">
+            <img src="img/italy.jpg" alt="" />
+            <span class="slide-label">04 &middot; Italian</span>
+          </a>
+          <a class="slide" href="blog.html#hindi" aria-hidden="true" tabindex="-1">
+            <img src="img/india.jpg" alt="" />
+            <span class="slide-label">01 &middot; Hindi</span>
+          </a>
+          <a class="slide" href="blog.html#spanish" aria-hidden="true" tabindex="-1">
+            <img src="img/spain.jpg" alt="" />
+            <span class="slide-label">02 &middot; Spanish</span>
+          </a>
+          <a class="slide" href="blog.html#turkish" aria-hidden="true" tabindex="-1">
+            <img src="img/harbor.jpg" alt="" />
+            <span class="slide-label">03 &middot; Turkish</span>
+          </a>
+          <a class="slide" href="blog.html#italian" aria-hidden="true" tabindex="-1">
+            <img src="img/italy.jpg" alt="" />
+            <span class="slide-label">04 &middot; Italian</span>
+          </a>
+          <a class="slide" href="blog.html#hindi" aria-hidden="true" tabindex="-1">
+            <img src="img/india.jpg" alt="" />
+            <span class="slide-label">01 &middot; Hindi</span>
+          </a>
+          <a class="slide" href="blog.html#spanish" aria-hidden="true" tabindex="-1">
+            <img src="img/spain.jpg" alt="" />
+            <span class="slide-label">02 &middot; Spanish</span>
+          </a>
+          <a class="slide" href="blog.html#turkish" aria-hidden="true" tabindex="-1">
+            <img src="img/harbor.jpg" alt="" />
+            <span class="slide-label">03 &middot; Turkish</span>
+          </a>
+          <a class="slide" href="blog.html#italian" aria-hidden="true" tabindex="-1">
+            <img src="img/italy.jpg" alt="" />
+            <span class="slide-label">04 &middot; Italian</span>
+          </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- WHY LANGUAGES: rust band with three cards in a row (flexbox) -->
+      <section class="why">
+        <h2>Why learn a language?</h2>
+        <ul class="why-list">
+          <li>
+            <span class="number">01</span>
+            <h3>Respect</h3>
+            <p>Speaking someone's language shows you care where they come from.</p>
+          </li>
+          <li>
+            <span class="number">02</span>
+            <h3>Connection</h3>
+            <p>Nothing gets lost in translation when you talk in their mother tongue.</p>
+          </li>
+          <li>
+            <span class="number">03</span>
+            <h3>Confidence</h3>
+            <p>Every awkward first conversation makes the next one easier.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- PHRASES: one phrase from each language, styled like the quotes in the blog -->
+      <section class="phrases">
+        <p class="eyebrow">phrases i live by</p>
+        <h2>Little words, big lessons</h2>
+        <div class="phrase-grid">
+          <blockquote><span class="post-label">Hindi</span>Dheere dheere<small>slowly, slowly</small></blockquote>
+          <blockquote><span class="post-label">Spanish</span>&iquest;C&oacute;mo se dice...?<small>how do you say...?</small></blockquote>
+          <blockquote><span class="post-label">Turkish</span>Kolay gelsin<small>may it come easy to you</small></blockquote>
+          <blockquote><span class="post-label">Italian</span>Piano piano si va lontano<small>slowly, slowly, you go far</small></blockquote>
+        </div>
+      </section>
+
+      <!-- CALL TO ACTION: rust band that sends people to the contact page -->
+      <section class="cta rust-band">
+        <h2>Learning a language too?</h2>
+        <p>Tell me which one. I'd love to hear your story.</p>
+        <a class="button button-light" href="contact.html">Get in touch</a>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Pinterest</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+      </ul>
+      <p>&copy; 2026 Aparna &middot; Lost in Translation</p>
+      <p class="credit">Music: "Foreign" by Moavii, from freetouse.com</p>
+    </footer>
+  </body>
+</html>
