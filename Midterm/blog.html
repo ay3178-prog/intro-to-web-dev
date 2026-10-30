@@ -35,16 +35,18 @@
             </ul>
           </li>
           <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <!-- BLOG INTRO: title + buttons for each language -->
-      <section class="page-intro">
-        <h1>Blog</h1>
-        <p>My stories, grouped by language. Pick one to jump to it.</p>
-        <!-- jump links: each one goes to the section with the same id lower on the page -->
+      <!-- BLOG INTRO: rust banner with buttons for each language -->
+      <section class="page-intro rust-band">
+        <p class="eyebrow">stories</p>
+        <h1>The Blog</h1>
+        <p>My stories, one for each language. The whole story is right here, no extra pages.</p>
+        <!-- jump links: each one goes to the story with the same id lower on the page -->
         <ul class="jump-links">
           <li><a href="#hindi">Hindi</a></li>
           <li><a href="#spanish">Spanish</a></li>
@@ -53,57 +55,59 @@
         </ul>
       </section>
 
-      <!-- POSTS: one section per language, photo on the left and text on the right -->
-      <section id="hindi" class="language">
-        <h2>Hindi</h2>
-        <article class="post">
-          <img src="img/story-1.jpg" alt="Airplane flying over the clouds at sunset" />
-          <div class="post-text">
-            <h3>[Story title]</h3>
-            <p class="post-date">[Month Year]</p>
-            <p>[First few sentences of your story.]</p>
-            <a class="info" href="#">Keep reading</a>
-          </div>
-        </article>
-      </section>
+      <!-- POSTS: the photo and the story sit side by side, and every other one flips sides -->
+      <section class="posts">
+      <article id="hindi" class="post">
+        <img src="img/story-1.jpg" alt="Airplane flying over the clouds at sunset" />
+        <div class="post-text">
+          <p class="post-label">01 &middot; Hindi</p>
+          <h2>[Story title]</h2>
+          <p class="post-date">[Month Year]</p>
+          <p>[Start your story here. Where were you, who were you talking to, and what language were you speaking?]</p>
+          <p>[What went wrong, what went right, or what surprised you.]</p>
+          <blockquote>[One line or phrase you learned, in the language]</blockquote>
+          <p>[What you took away from it.]</p>
+        </div>
+      </article>
 
-      <section id="spanish" class="language">
-        <h2>Spanish</h2>
-        <article class="post">
-          <img src="img/story-2.jpg" alt="The Louvre in Paris with people walking in the courtyard" />
-          <div class="post-text">
-            <h3>[Story title]</h3>
-            <p class="post-date">[Month Year]</p>
-            <p>[First few sentences of your story.]</p>
-            <a class="info" href="#">Keep reading</a>
-          </div>
-        </article>
-      </section>
+      <article id="spanish" class="post">
+        <img src="img/story-2.jpg" alt="The Louvre in Paris with people walking in the courtyard" />
+        <div class="post-text">
+          <p class="post-label">02 &middot; Spanish</p>
+          <h2>[Story title]</h2>
+          <p class="post-date">[Month Year]</p>
+          <p>[Start your story here. Where were you, who were you talking to, and what language were you speaking?]</p>
+          <p>[What went wrong, what went right, or what surprised you.]</p>
+          <blockquote>[One line or phrase you learned, in the language]</blockquote>
+          <p>[What you took away from it.]</p>
+        </div>
+      </article>
 
-      <section id="turkish" class="language">
-        <h2>Turkish</h2>
-        <article class="post">
-          <img src="img/story-3.jpg" alt="Boats on bright blue water in front of a seaside town" />
-          <div class="post-text">
-            <h3>[Story title]</h3>
-            <p class="post-date">[Month Year]</p>
-            <p>[First few sentences of your story.]</p>
-            <a class="info" href="#">Keep reading</a>
-          </div>
-        </article>
-      </section>
+      <article id="turkish" class="post">
+        <img src="img/story-3.jpg" alt="Boats on bright blue water in front of a seaside town" />
+        <div class="post-text">
+          <p class="post-label">03 &middot; Turkish</p>
+          <h2>[Story title]</h2>
+          <p class="post-date">[Month Year]</p>
+          <p>[Start your story here. Where were you, who were you talking to, and what language were you speaking?]</p>
+          <p>[What went wrong, what went right, or what surprised you.]</p>
+          <blockquote>[One line or phrase you learned, in the language]</blockquote>
+          <p>[What you took away from it.]</p>
+        </div>
+      </article>
 
-      <section id="italian" class="language">
-        <h2>Italian (still learning)</h2>
-        <article class="post">
-          <img src="img/story-4.jpg" alt="Two travelers with backpacks walking across the desert" />
-          <div class="post-text">
-            <h3>[Story title]</h3>
-            <p class="post-date">[Month Year]</p>
-            <p>[First few sentences of your story.]</p>
-            <a class="info" href="#">Keep reading</a>
-          </div>
-        </article>
+      <article id="italian" class="post">
+        <img src="img/story-4.jpg" alt="Two travelers with backpacks walking across the desert" />
+        <div class="post-text">
+          <p class="post-label">04 &middot; Italian (still learning)</p>
+          <h2>[Story title]</h2>
+          <p class="post-date">[Month Year]</p>
+          <p>[Start your story here. Where were you, who were you talking to, and what language were you speaking?]</p>
+          <p>[What went wrong, what went right, or what surprised you.]</p>
+          <blockquote>[One line or phrase you learned, in the language]</blockquote>
+          <p>[What you took away from it.]</p>
+        </div>
+      </article>
       </section>
     </main>
 
@@ -112,7 +116,7 @@
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Pinterest</a></li>
-        <li><a href="about.html#contact">Contact me</a></li>
+        <li><a href="contact.html">Contact me</a></li>
       </ul>
       <p>&copy; 2026 Aparna &middot; Lost in Translation</p>
       <p class="credit">Music: "Foreign" by Moavii, from freetouse.com</p>
