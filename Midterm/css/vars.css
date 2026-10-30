@@ -1,23 +1,654 @@
-/* VARS: all my colors and fonts
-   reminder: this file has to be linked BEFORE style.css so i can use them with var() */
+/* Lost in Translation: my midterm stylesheet */
 
-:root {
-  /* colors (from my pinterest board) */
-  --paper: #f3ebdd;   /* page background */
-  --card: #fbf6ee;    /* cards + form boxes */
-  --sand: #e4d3b8;    /* boxes + footer */
-  --ink: #3a2a1f;     /* main text */
-  --navy: #1f3645;    /* headings (from the music poster) */
-  --muted: #6b5a4c;   /* smaller text */
-  --rust: #a8432a;    /* buttons + links */
-  --mustard: #e3a73e; /* little accents */
-  --white: #ffffff;
+/* COLORS + FONTS: all my variables are in var.css */
 
-  /* fonts */
-  --heading-font: "Courier Prime", "Courier New", monospace;
-  --body-font: "DM Sans", Arial, sans-serif;
+/* BASICS */
+* {
+  box-sizing: border-box; /* padding stays inside the box width */
+}
 
-  /* shapes */
-  --radius: 10px;     /* rounded corners on cards */
-  --pill: 24px;       /* round buttons */
+html {
+  scroll-behavior: smooth; /* the blog jump links scroll smoothly instead of jumping */
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body-font);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  color: var(--rust);
+}
+
+section {
+  padding: 56px 40px;
+}
+
+/* HEADER: logo on the left, nav on the right (flexbox) */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* logo left, nav right */
+  align-items: center;
+  padding: 14px 40px;
+  background: var(--paper);
+  position: sticky; /* sticks to the top when you scroll */
+  top: 0;
+  z-index: 20;
+  box-shadow: 0 2px 10px rgba(58, 42, 31, 0.08);
+}
+
+.logo {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--paper);
+  background: var(--navy);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: rotate(-10deg) scale(1.1); /* the logo tilts a little on hover */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 6px 0;
+  position: relative; /* so the underline can sit under the link */
+}
+
+/* underline that grows from the left when you hover */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rust);
+  transition: width 0.3s;
+}
+
+nav a:hover::after,
+nav a:focus::after,
+nav a.current::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--rust);
+}
+
+/* DROPDOWN: i used positioning to put the list under Languages */
+.has-dropdown {
+  position: relative; /* the dropdown lines up under this */
+}
+
+.has-dropdown ul {
+  position: absolute;
+  top: 100%;
+  left: -12px;
+  flex-direction: column;
+  gap: 0;
+  background: var(--paper);
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  min-width: 150px;
+  padding: 6px 0;
+  box-shadow: 0 8px 20px rgba(58, 42, 31, 0.12);
+  /* hidden at first, then it fades + slides in */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+}
+
+.has-dropdown ul a {
+  display: block;
+  padding: 8px 14px;
+}
+
+.has-dropdown ul a::after {
+  display: none; /* no underline inside the dropdown */
+}
+
+.has-dropdown ul a:hover {
+  background: var(--sand);
+}
+
+.has-dropdown:hover ul,
+.has-dropdown:focus-within ul {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* HERO: photo with the text sitting on top of it */
+.hero {
+  position: relative;
+  height: 80vh;
+  padding: 0;
+  overflow: hidden;
+  background: var(--navy); /* shows if the photo doesn't load */
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills the box without stretching the photo */
+  animation: slow-zoom 20s ease-in-out infinite alternate;
+}
+
+/* dark layer over the photo so the white text is easy to read */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(31, 54, 69, 0.85), rgba(31, 54, 69, 0.35));
+}
+
+.hero-text {
+  position: absolute;
+  left: 40px;
+  bottom: 64px;
+  z-index: 1; /* above the dark layer */
+  color: var(--white);
+  max-width: 600px;
+  animation: rise-in 1s ease-out both;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.8rem;
+  color: var(--mustard);
+  margin: 0;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  margin: 8px 0 12px;
+}
+
+.hero-audio {
+  display: block;
+  margin-top: 24px;
+  width: 100%;
+  max-width: 320px; /* never wider than the text */
+}
+
+/* keyframes: the hero text slides up and fades in */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* keyframes: the photo slowly zooms in and out */
+@keyframes slow-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+/* BUTTONS */
+.button {
+  display: inline-block;
+  background: var(--rust);
+  color: var(--white);
+  text-decoration: none;
+  padding: 12px 26px;
+  border: none;
+  border-radius: var(--pill);
+  font-family: var(--body-font);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.button:hover,
+.button:focus {
+  transform: translateY(-3px) scale(1.04); /* the button lifts up a little on hover */
+  box-shadow: 0 8px 16px rgba(168, 67, 42, 0.35);
+}
+
+/* INTRO */
+.intro {
+  max-width: 760px;
+}
+
+.intro p {
+  font-size: 1.15rem;
+}
+
+/* PHOTO STRIP: the photos slide sideways like a carousel (just CSS) */
+.strip {
+  padding: 0 0 56px;
+  overflow: hidden; /* hides the photos that are off the screen */
+}
+
+.strip-track {
+  display: flex;
+  gap: 16px;
+  width: max-content; /* as wide as all the photos put together */
+  animation: scroll-left 40s linear infinite;
+}
+
+.strip-track img {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* stops moving when you hover so you can look */
+.strip:hover .strip-track {
+  animation-play-state: paused;
+}
+
+/* moves left by half (one full copy of the photos), then starts over */
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+/* WHY LANGUAGES: three cards in a row (flexbox) */
+.why-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.why-list li {
+  flex: 1; /* all three cards are the same width */
+  background: var(--card);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.why-list li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(58, 42, 31, 0.12);
+}
+
+.number {
+  font-family: var(--heading-font);
+  color: var(--rust);
+  font-size: 1.1rem;
+}
+
+.why-list h3 {
+  color: var(--navy);
+  font-size: 1.5rem;
+  margin: 8px 0;
+}
+
+.why-list p {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* EXPLORE: photo cards with a hover mask */
+.container {
+  display: flex;
+  gap: 16px;
+}
+
+.thumb {
+  position: relative; /* the mask sits on top of this box */
+  flex: 1;
+  aspect-ratio: 1 / 1; /* makes the cards square */
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--sand);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.thumb:hover img {
+  transform: scale(1.1); /* the photo zooms in a bit */
+}
+
+.mask {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(58, 42, 31, 0.88);
+  color: var(--paper);
+  padding: 20px;
+  /* starts hidden below the card, then slides up on hover */
+  transform: translateY(100%);
+  transition: transform 0.4s;
+}
+
+.mask h3 {
+  margin-top: 0;
+}
+
+.mask a {
+  color: var(--mustard);
+}
+
+.thumb:hover .mask,
+.thumb:focus-within .mask {
+  transform: translateY(0);
+}
+
+/* BLOG INTRO */
+.page-intro {
+  padding-bottom: 16px;
+}
+
+.page-intro h1 {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+/* BLOG: jump links + posts */
+.jump-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.jump-links a {
+  display: inline-block;
+  padding: 6px 18px;
+  border: 1px solid var(--rust);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.jump-links a:hover,
+.jump-links a:focus {
+  background: var(--rust);
+  color: var(--white);
+}
+
+.language {
+  scroll-margin-top: 80px; /* so the sticky header doesn't cover the heading */
+}
+
+.language h2 {
+  border-bottom: 2px solid var(--sand);
+  padding-bottom: 8px;
+}
+
+.post {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.post img {
+  width: 300px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--sand);
+}
+
+.post-text h3 {
+  margin-top: 0;
+  color: var(--navy);
+}
+
+.post-date {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ABOUT + CONTACT FORM */
+.about {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-photo {
+  width: 320px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 160px 160px 10px 10px; /* arch shape on the photo */
+}
+
+.tags {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags li {
+  background: var(--sand);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.contact {
+  max-width: 680px;
+}
+
+/* name + email boxes (flexbox), like the class demo */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+}
+
+.label-lg {
+  display: block;
+  font-weight: 500;
+  font-size: 1.05rem;
+  margin-top: 12px;
+}
+
+.input-lg,
+.message {
+  width: 100%;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  padding: 12px;
+  border: 1px solid var(--sand);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--ink);
+}
+
+.message {
+  min-height: 140px;
+  resize: vertical; /* you can only drag it taller, not wider */
+}
+
+/* rust outline when you click into a box */
+.input-lg:focus,
+.message:focus {
+  outline: 2px solid var(--rust);
+  border-color: transparent;
+}
+
+.message-area {
+  margin-top: 8px;
+}
+
+.button-bar {
+  margin-top: 20px;
+}
+
+.btn-dark {
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: var(--pill);
+  padding: 12px 32px;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-dark:hover,
+.btn-dark:focus {
+  background: var(--rust);
+  transform: translateY(-3px);
+}
+
+/* FOOTER */
+.site-footer {
+  background: var(--sand);
+  padding: 28px 40px;
+  text-align: center;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.site-footer a {
+  color: var(--ink);
+}
+
+.credit {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* MEDIA QUERY: phones (768px and smaller) */
+@media (max-width: 768px) {
+  section {
+    padding: 36px 20px;
+  }
+
+  /* logo goes on top of the nav */
+  .site-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 20px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  /* phones can't hover, so tapping Languages just opens the blog */
+  .has-dropdown ul {
+    display: none;
+  }
+
+  .hero {
+    height: 75vh;
+  }
+
+  .hero-text {
+    left: 20px;
+    right: 20px;
+    bottom: 32px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .strip-track img {
+    width: 180px;
+    height: 130px;
+  }
+
+  /* everything in a row stacks into one column */
+  .why-list,
+  .container,
+  .post,
+  .about {
+    flex-direction: column;
+  }
+
+  .post img,
+  .about-photo {
+    width: 100%;
+  }
+
+  /* phones can't hover, so the story text always shows */
+  .mask {
+    transform: translateY(0);
+  }
+}
+
+/* REDUCE MOTION: if someone turned off animations on their computer, i stop mine too */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
