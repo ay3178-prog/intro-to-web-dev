@@ -1,6 +1,6 @@
 /* Lost in Translation: my midterm stylesheet */
 
-/* COLORS + FONTS: all my variables are in vars.css */
+/* COLORS + FONTS: all my variables are in var.css */
 
 /* BASICS */
 * {
@@ -297,7 +297,16 @@ nav a:hover {
   }
 }
 
-/* WHY LANGUAGES: three cards in a row (flexbox) */
+/* WHY LANGUAGES: rust band with three cards in a row (flexbox) */
+.why {
+  background: var(--rust);
+  color: var(--paper);
+}
+
+.why h2 {
+  color: var(--paper);
+}
+
 .why-list {
   list-style: none;
   padding: 0;
@@ -316,7 +325,7 @@ nav a:hover {
 
 .why-list li:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(58, 42, 31, 0.12);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25);
 }
 
 .number {
@@ -388,90 +397,148 @@ nav a:hover {
   transform: translateY(0);
 }
 
-/* BLOG INTRO */
-.page-intro {
-  padding-bottom: 16px;
+/* RUST BAND: the rust banner at the top of the blog */
+.rust-band {
+  background: var(--rust);
+  color: var(--paper);
+  text-align: center;
+  padding: 72px 40px;
 }
 
-.page-intro h1 {
-  font-size: 3rem;
-  margin-bottom: 8px;
+.rust-band h1 {
+  font-size: 3.5rem;
+  margin: 6px 0 10px;
+}
+
+.rust-band .eyebrow {
+  color: var(--mustard);
 }
 
 /* BLOG: jump links + posts */
 .jump-links {
   list-style: none;
   padding: 0;
+  margin-top: 28px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
 }
 
+/* jump links are cream outlines on the rust band */
 .jump-links a {
   display: inline-block;
-  padding: 6px 18px;
-  border: 1px solid var(--rust);
-  border-radius: 20px;
+  padding: 8px 22px;
+  border: 1px solid var(--paper);
+  border-radius: var(--pill);
+  color: var(--paper);
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
 
 .jump-links a:hover,
 .jump-links a:focus {
-  background: var(--rust);
-  color: var(--white);
+  background: var(--paper);
+  color: var(--rust);
 }
 
-.language {
-  scroll-margin-top: 80px; /* so the sticky header doesn't cover the heading */
+.posts {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.language h2 {
-  border-bottom: 2px solid var(--sand);
-  padding-bottom: 8px;
-}
-
+/* each post: photo on one side, the full story on the other (flexbox) */
 .post {
   display: flex;
-  gap: 28px;
-  align-items: flex-start;
+  gap: 48px;
+  align-items: center;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--sand);
+  scroll-margin-top: 80px; /* so the sticky header doesn't cover the story */
+}
+
+/* every other post flips so the photo is on the right */
+.post:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .post img {
-  width: 300px;
-  aspect-ratio: 4 / 3;
+  width: 45%;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: 8px;
-  background: var(--sand);
+  border-radius: 160px 160px var(--radius) var(--radius); /* arch shape like the about page */
+  box-shadow: 14px 14px 0 var(--rust); /* rust block behind the photo */
 }
 
-.post-text h3 {
-  margin-top: 0;
+.post:nth-child(even) img {
+  box-shadow: -14px 14px 0 var(--rust);
+}
+
+.post-text {
+  flex: 1;
+}
+
+.post-label {
+  color: var(--rust);
+  font-family: var(--heading-font);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.post-text h2 {
   color: var(--navy);
+  margin: 8px 0 4px;
 }
 
 .post-date {
   color: var(--muted);
   font-size: 0.9rem;
+  margin-top: 0;
 }
 
-/* ABOUT + CONTACT FORM */
+/* a phrase from the story in big letters with a rust line */
+blockquote {
+  margin: 24px 0;
+  padding: 8px 0 8px 20px;
+  border-left: 4px solid var(--rust);
+  font-family: var(--heading-font);
+  font-size: 1.3rem;
+  color: var(--rust);
+}
+
+/* ABOUT */
 .about {
   display: flex;
-  gap: 40px;
+  gap: 56px;
   align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 72px 40px;
 }
 
 .about-photo {
-  width: 320px;
+  width: 340px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  border-radius: 160px 160px 10px 10px; /* arch shape on the photo */
+  border-radius: 170px 170px var(--radius) var(--radius); /* arch shape on the photo */
+  box-shadow: 16px 16px 0 var(--rust); /* rust block behind the photo */
+}
+
+.about h1 {
+  font-size: 3rem;
+  margin: 6px 0 12px;
+}
+
+.about .eyebrow {
+  color: var(--rust);
 }
 
 .tags {
   list-style: none;
   padding: 0;
+  margin: 20px 0 28px;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -484,40 +551,81 @@ nav a:hover {
   font-size: 0.9rem;
 }
 
-.contact {
-  max-width: 680px;
+/* CONTACT PAGE: rust background with the form in a box */
+.contact-body {
+  background: var(--rust);
 }
 
-/* name + email boxes (flexbox), use class demo */
+.contact-page {
+  padding: 72px 20px;
+}
+
+.contact-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 56px 48px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.contact-card h1 {
+  font-size: 2.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin: 0 0 32px;
+}
+
+/* name + email on the same line (flexbox), like the class demo */
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 16px;
+  justify-content: center;
   align-items: center;
+  gap: 12px 16px;
 }
 
 .label-lg {
-  display: block;
-  font-weight: 500;
-  font-size: 1.05rem;
-  margin-top: 12px;
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+}
+
+.input-lg {
+  flex: 1 1 200px;
+  max-width: 260px;
 }
 
 .input-lg,
 .message {
-  width: 100%;
   font-family: var(--body-font);
   font-size: 1rem;
   padding: 12px;
   border: 1px solid var(--sand);
-  border-radius: 6px;
-  background: var(--card);
+  border-radius: 8px;
+  background: var(--white);
   color: var(--ink);
 }
 
+.message-area {
+  margin-top: 36px;
+}
+
+/* the big heading above the message box */
+.label-title {
+  display: block;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
 .message {
-  min-height: 140px;
-  resize: vertical; /* you can only drag it taller, it can't go wider */
+  width: 100%;
+  min-height: 220px;
+  resize: vertical; /* you can only drag it taller, not wider */
 }
 
 /* rust outline when you click into a box */
@@ -527,35 +635,42 @@ nav a:hover {
   border-color: transparent;
 }
 
-.message-area {
-  margin-top: 8px;
+.form-note {
+  font-family: var(--heading-font);
+  color: var(--muted);
+  margin: 20px 0 0;
 }
 
 .button-bar {
-  margin-top: 20px;
+  margin-top: 24px;
 }
 
+/* full width rust send button */
 .btn-dark {
-  background: var(--navy);
+  width: 100%;
+  background: var(--rust);
   color: var(--white);
   border: none;
-  border-radius: var(--pill);
-  padding: 12px 32px;
+  border-radius: var(--radius);
+  padding: 16px;
   font-family: var(--body-font);
   font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   cursor: pointer;
   transition: transform 0.2s, background 0.2s;
 }
 
 .btn-dark:hover,
 .btn-dark:focus {
-  background: var(--rust);
+  background: var(--navy);
   transform: translateY(-3px);
 }
 
 /* FOOTER */
 .site-footer {
   background: var(--sand);
+  border-top: 6px solid var(--rust);
   padding: 28px 40px;
   text-align: center;
 }
@@ -628,9 +743,34 @@ nav a:hover {
     flex-direction: column;
   }
 
+  /* zigzag posts stack too, photo on top */
+  .post:nth-child(even) {
+    flex-direction: column;
+  }
+
+  /* smaller rust block so the photo doesn't stick out past the screen */
   .post img,
+  .post:nth-child(even) img,
   .about-photo {
-    width: 100%;
+    width: calc(100% - 10px);
+    box-shadow: 8px 8px 0 var(--rust);
+  }
+
+  .rust-band h1,
+  .about h1 {
+    font-size: 2.4rem;
+  }
+
+  .contact-card {
+    padding: 36px 20px;
+  }
+
+  .contact-card h1 {
+    font-size: 1.8rem;
+  }
+
+  .input-lg {
+    max-width: 100%;
   }
 
   /* phones can't hover, so the story text always shows */
