@@ -3,16 +3,17 @@
 **Live site:** https://ay3178-prog.github.io/intro-to-web-dev/Midterm/
 
 ## Concept
-A blog about learning languages, told through my own stories of speaking in English, Hindi, Spanish, Turkish and Italian (which I'm learning now). It's for language lovers and for anyone who freezes up when it's their turn to speak. Speaking someone's language is a way of respecting where they come from, so that nothing gets lost in translation.
+A blog about learning languages, told through my own stories in English, Hindi, Spanish, Turkish and Italian (which I'm learning now). It's for language lovers and for anyone who freezes up when it's their turn to speak. Speaking someone's language is a way of respecting where they come from, so nothing gets lost in translation.
 
 ## Sitemap
 ```
 Home
 ├── Blog      (stories grouped by language)
 │     └── Languages dropdown jumps to #hindi, #spanish, #turkish, #italian
-└── About     (me + contact)
+├── About     (me)
+└── Contact   (contact form)
 ```
-Every page: logo (links home), nav, footer with socials and email/bsically has a footer.
+Every page: logo (links home), nav, footer with socials and email.
 
 ## Wireframe
 ![Home page wireframe](img/wireframe.png)
@@ -27,8 +28,9 @@ Every page: logo (links home), nav, footer with socials and email/bsically has a
 
 ## Progress
 - Home page: built (sticky nav with dropdown, hero with music player, moving photo strip, why languages cards, explore cards with hover previews)
-- Blog page: built, stories still to write
-- About page: built (about me + contact form)
+- Blog page: built, full stories sit next to each photo (no extra pages)
+- About page: built (about me)
+- Contact page: built (contact form in a box on a rust background)
 
 ## Skills used
 - Box model, flexbox and positioning
@@ -45,7 +47,8 @@ Every page: logo (links home), nav, footer with socials and email/bsically has a
 Midterm/
 ├── index.html      home page
 ├── blog.html       blog, grouped by language
-├── about.html      about me + contact
+├── about.html      about me
+├── contact.html    contact form
 ├── css/
 │   ├── var.css     my colors + fonts (variables)
 │   └── xstyle.css  all the styling
@@ -67,4 +70,4 @@ Midterm/
 - Connect the contact form
 
 ## Credits
-Photos: google
+Photos: [list where each photo came from]
