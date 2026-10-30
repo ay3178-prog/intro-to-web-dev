@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost in Translation | About</title>
+    <!-- Google Fonts: Courier Prime & DM Sans for everything else -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/var.css" />
+    <link rel="stylesheet" href="css/xstyle.css" />
+  </head>
+
+  <body>
+    <!-- HEADER: logo on the left, nav on the right, it sticks to the top when you scroll -->
+    <header class="site-header">
+      <!-- logo goes back to the home page -->
+      <a class="logo" href="index.html">LT</a>
+
+      <nav>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <!-- dropdown: i made a list inside a list -->
+          <li class="has-dropdown">
+            <a href="blog.html">Languages</a>
+            <ul>
+              <li><a href="blog.html#hindi">Hindi</a></li>
+              <li><a href="blog.html#spanish">Spanish</a></li>
+              <li><a href="blog.html#turkish">Turkish</a></li>
+              <li><a href="blog.html#italian">Italian</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html" class="current">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ABOUT: arch photo on the left, my intro + languages on the right (flexbox) -->
+      <section class="about">
+        <figure class="post-photo about-frame">
+          <img src="img/aparna.jpg" alt="Photo of Aparna" />
+        </figure>
+        <div class="post-text">
+          <p class="post-label">about me</p>
+          <h1>Hi! I'm Aparna Yellamraju.</h1>
+          <p>
+            I'm a designer who loves Figma-ing, brainstorming, and turning ideas into experiences that
+            stretch both imagination and skill. I'm currently pursuing a B.S. in Integrated Design &amp; Media
+            with a minor in Computer Science at NYU, where I explore how design, technology, and people intersect.
+          </p>
+          <p>
+            When I'm not designing, I'm probably singing with NY Masti, NYU's premier South Asian a cappella group,
+            or thinking a few moves ahead as a chess player on the NYU Collegiate team. I spend weekends at the
+            chess forum playing pickup games, trading Spotify playlists, and chasing down ice cream trucks,
+            even when it's freezing.
+          </p>
+          <p>
+            If I'm not in New York, I'm usually back home in Austin, Texas wearing shorts in December, or somewhere
+            else in the world reconnecting with friends and practicing Turkish, Spanish, or French. I'm endlessly
+            curious, fueled by learning, and excited by design that feels human, expressive, and a little unexpected.
+          </p>
+          <!-- the languages i speak as little tags -->
+          <ul class="tags">
+            <li>English</li>
+            <li>Hindi</li>
+            <li>Spanish</li>
+            <li>Turkish</li>
+            <li>French</li>
+            <li>Italian (learning)</li>
+          </ul>
+          <a class="button" href="contact.html">Get in touch</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+      </ul>
+      <p>&copy; 2026 Aparna &middot; Lost in Translation</p>
+      <p class="credit">Music: "Foreign" by Moavii, from freetouse.com</p>
+    </footer>
+  </body>
+</html>

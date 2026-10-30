@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lost in Translation | Contact</title>
+    <!-- Google Fonts: Courier Prime & DM Sans for everything else -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/var.css" />
+    <link rel="stylesheet" href="css/xstyle.css" />
+  </head>
+
+  <body class="contact-body">
+    <!-- HEADER: logo on the left, nav on the right, it sticks to the top when you scroll -->
+    <header class="site-header">
+      <!-- logo goes back to the home page -->
+      <a class="logo" href="index.html">LT</a>
+
+      <nav>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <!-- dropdown: i made a list inside a list -->
+          <li class="has-dropdown">
+            <a href="blog.html">Languages</a>
+            <ul>
+              <li><a href="blog.html#hindi">Hindi</a></li>
+              <li><a href="blog.html#spanish">Spanish</a></li>
+              <li><a href="blog.html#turkish">Turkish</a></li>
+              <li><a href="blog.html#italian">Italian</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="current">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- CONTACT: rust background with the form in a box in the middle -->
+      <section class="contact-page">
+        <div class="contact-card">
+          <h1>Let's talk languages!</h1>
+
+          <!-- CONTACT FORM: set up like the class demo
+               POST sends the info without putting it in the url
+               action sends the message to my email through formsubmit.co -->
+          <form action="https://formsubmit.co/ay3178@nyu.edu" method="POST">
+            <!-- name + email next to each other -->
+            <div class="row">
+              <label class="label-lg" for="name">Name:</label>
+              <input id="name" name="name" type="text" class="input-lg" required />
+
+              <label class="label-lg" for="email">Email:</label>
+              <input id="email" name="email" type="email" class="input-lg" required />
+            </div>
+
+            <div class="message-area">
+              <label class="label-title" for="message">Tell me all about it!</label>
+              <textarea
+                id="message"
+                name="message"
+                class="message"
+                placeholder="Which language are you learning? Any funny moments?"
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-note">I read every message and will write back within a few days.</p>
+
+            <div class="button-bar">
+              <button class="btn-dark" type="submit">Send</button>
+            </div>
+
+            <!-- hidden: sets the subject line of the email i get -->
+            <input type="hidden" name="_subject" value="New message from Lost in Translation" />
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact me</a></li>
+      </ul>
+      <p>&copy; 2026 Aparna &middot; Lost in Translation</p>
+      <p class="credit">Music: "Foreign" by Moavii, from freetouse.com</p>
+    </footer>
+  </body>
+</html>
