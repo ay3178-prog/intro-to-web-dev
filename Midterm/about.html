@@ -35,6 +35,7 @@
             </ul>
           </li>
           <li><a href="about.html" class="current">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -42,9 +43,10 @@
     <main>
       <!-- ABOUT: arch photo on the left, my intro + languages on the right (flexbox) -->
       <section class="about">
-        <img class="about-photo" src="img/story-3.jpg" alt="Boats on bright blue water in front of a seaside town" />
+        <img class="about-photo" src="img/about.jpg" alt="Photo of Aparna" />
         <div>
-          <h1>About me</h1>
+          <p class="eyebrow">about me</p>
+          <h1>Hi, I'm Aparna.</h1>
           <p>[A short paragraph about you, the languages you speak, and why you started this blog.]</p>
           <!-- the languages i speak as little tags -->
           <ul class="tags">
@@ -54,42 +56,8 @@
             <li>Turkish</li>
             <li>Italian (learning)</li>
           </ul>
+          <a class="button" href="contact.html">Get in touch</a>
         </div>
-      </section>
-
-      <!-- CONTACT FORM: set up like the class demo
-           POST sends the info without putting it in the url
-           action="#" is a placeholder until we connect the real one in class -->
-      <section id="contact" class="contact">
-        <h2>Get in touch!</h2>
-        <p>Learning a language too? Tell me which one.</p>
-        <form action="#" method="POST">
-          <div class="row">
-            <label class="label-lg" for="name">Name:</label>
-            <input id="name" name="name" type="text" class="input-lg" required />
-
-            <label class="label-lg" for="email">Email:</label>
-            <input id="email" name="email" type="email" class="input-lg" required />
-          </div>
-
-          <div class="message-area">
-            <label class="label-lg" for="message">Leave me a message!</label>
-            <textarea
-              id="message"
-              name="message"
-              class="message"
-              placeholder="Which language are you learning?"
-              required
-            ></textarea>
-          </div>
-
-          <div class="button-bar">
-            <button class="btn-dark" type="submit">Send</button>
-          </div>
-
-          <!-- hidden: sets the subject line of the email i get -->
-          <input type="hidden" name="subject" value="New Submission From: {{name}}" />
-        </form>
       </section>
     </main>
 
@@ -98,7 +66,7 @@
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Pinterest</a></li>
-        <li><a href="about.html#contact">Contact me</a></li>
+        <li><a href="contact.html">Contact me</a></li>
       </ul>
       <p>&copy; 2026 Aparna &middot; Lost in Translation</p>
       <p class="credit">Music: "Foreign" by Moavii, from freetouse.com</p>
