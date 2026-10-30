@@ -1,0 +1,23 @@
+/* VARS: all my colors and fonts
+   reminder: this file has to be linked BEFORE style.css so i can use them with var() */
+
+:root {
+  /* colors (from my pinterest board) */
+  --paper: #f3ebdd;   /* page background */
+  --card: #fbf6ee;    /* cards + form boxes */
+  --sand: #e4d3b8;    /* boxes + footer */
+  --ink: #3a2a1f;     /* main text */
+  --navy: #1f3645;    /* headings (from the music poster) */
+  --muted: #6b5a4c;   /* smaller text */
+  --rust: #a8432a;    /* buttons + links */
+  --mustard: #e3a73e; /* little accents */
+  --white: #ffffff;
+
+  /* fonts */
+  --heading-font: "Courier Prime", "Courier New", monospace;
+  --body-font: "DM Sans", Arial, sans-serif;
+
+  /* shapes */
+  --radius: 10px;     /* rounded corners on cards */
+  --pill: 24px;       /* round buttons */
+}
