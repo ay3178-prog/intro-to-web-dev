@@ -1,45 +1,54 @@
 # Lost in Translation (Midterm)
 
-**Live site:** [add your GitHub Pages link here]
+**Live site:** https://ay3178-prog.github.io/intro-to-web-dev/Midterm/
 
 ## Concept
-A blog about learning languages, told through my own stories in English, Hindi, Spanish, Turkish and Italian (which I'm learning now). It's for language lovers and for anyone who freezes up when it's their turn to speak. Speaking someone's language is a way of respecting where they come from, so nothing gets lost in translation.
+A blog about learning languages, told through my own stories of speaking in English, Hindi, Spanish, Turkish and Italian (which I'm learning now). It's for language lovers and for anyone who freezes up when it's their turn to speak. Speaking someone's language is a way of respecting where they come from, so that nothing gets lost in translation.
 
 ## Sitemap
 ```
 Home
-├── Gallery   (photos of the places each language lives; hover to preview a story)
 ├── Blog      (stories grouped by language)
 │     └── Languages dropdown jumps to #hindi, #spanish, #turkish, #italian
 └── About     (me + contact)
 ```
-Every page: logo (links home), nav, footer with socials and email.
+Every page: logo (links home), nav, footer with socials and email/bsically has a footer.
 
 ## Wireframe
 ![Home page wireframe](img/wireframe.png)
 
 ## Skills used
-- Box model, flexbox and positioning (header, hero, three-column section, gallery)
+- Box model, flexbox and positioning (header, hero, three-column section, explore cards)
 - CSS-only dropdown nav (Week 05 pattern)
 - Hero with text over the image
-- Gallery with a hover mask
+- Explore cards with a hover mask
 - CSS variables for my color palette
 - Media query at `max-width: 768px`: nav stacks, columns become one, story previews always show
 
 ## Progress
-- Home page: built (nav with dropdown, hero with a music player, intro, why languages, explore gallery, footer)
-- Blog page: almost built (sections for each language, post layout, jump links)
-- Gallery page: not started yet
+- Home page: built (sticky nav with dropdown, hero with music player, moving photo strip, why languages cards, explore cards with hover previews)
+- Blog page: built, stories still to write
+- About page: built (about me + contact form)
+
+## Skills used
+- Box model, flexbox and positioning
+- CSS-only dropdown nav (Week 05) that fades in
+- Hero with text over the image
+- Hover effects: underline, button lift, card zoom, sliding story previews
+- Keyframe animations: hero text rises in, hero photo slowly zooms, photo strip scrolls like a carousel
+- Contact form (Week 07)
+- CSS variables for my colors
+- Media query at max-width 768px, plus prefers-reduced-motion for people who turn off animations
 
 ## File structure
 ```
 Midterm/
 ├── index.html      home page
 ├── blog.html       blog, grouped by language
-├── gallery.html    coming soon
 ├── about.html      about me + contact
 ├── css/
-│   └── style.css
+│   ├── var.css     my colors + fonts (variables)
+│   └── xstyle.css  all the styling
 ├── img/            photos
 ├── audio/
 │   └── foreign.mp3 song for the music player on the home page
@@ -53,8 +62,9 @@ Midterm/
 - Fonts: Google Fonts (Courier Prime, DM Sans)
 - Photos: [list where each photo came from]
 
-## Still learning
-- Making the images move like a carousel
+## Next steps
+- Write a real story for each language
+- Connect the contact form
 
 ## Credits
-Photos: [list where each photo came from]
+Photos: google
