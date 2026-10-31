@@ -69,11 +69,8 @@ That's about 86% smaller, so the site loads much faster on a phone.
 - Music: "Foreign" by Moavii, from freetouse.com
 - Class exercises: Week 04 flexbox, Week 05 dropdown nav and portfolio page, Week 06 media queries
 - Fonts: Google Fonts (Courier Prime, DM Sans)
-- Photos: [list where each photo came from]
+- Photos: google
 
 ## Next steps
-- Write a real story for each language
 - Connect the contact form
 
-## Credits
-Photos: [list where each photo came from]
